@@ -1,0 +1,72 @@
+/* selected tag{
+    property: value;
+
+    'id' - to target a single element
+    'class' - to target a group of element
+
+}*/
+
+h1{
+    color: blue;
+    font-family: "Arial";
+    font-size: 20px;
+    font-style:;
+    font-weight:;
+}
+
+h2 {
+    color: rgb(8, 84, 1);
+}
+
+h3 {
+    color: #0895a8;
+}
+
+/* last value indicates the transparency level */
+h4 {
+    color: rgba(8, 84, 1, 0.5);
+}
+
+div {
+    background: red;
+    border-color: blue;
+    border-width: 10px;
+    border-style: dotted;
+    width:25%;
+    /* top, right, bottom, left */
+    /* margin:10px 20px; */
+    margin: auto;
+    padding:10px;
+}
+
+body{
+    background: url();
+    text-align: center;
+}
+
+.firstdiv{
+    color:green;
+}
+
+#singlep{
+    color:grey;
+    text-decoration:line-through;
+}
+
+h3 + ul{
+    border:2px dotted purple;
+}
+
+li a{
+    color: orange;
+}
+
+/* to get the anchor tags inside a li */
+li a[href="www.npr.org"]{
+    color:blue;
+}
+
+/* visited links */
+a:visited{
+    color: blue;
+}
