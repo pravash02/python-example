@@ -3,7 +3,6 @@ FROM python:3.8-slim-buster
 WORKDIR /app
 
 COPY . /app
-COPY app.py .
 
 RUN apt-get update \
  && apt-get install -y curl unzip \
@@ -28,5 +27,5 @@ EXPOSE 5000
 CMD ["pwd"]
 CMD ["ls"]
 
-ENTRYPOINT [ "python3" ]
-CMD [ "src/app.py" ]
+# ENTRYPOINT [ "python3" ]
+# CMD [ "app/app.py" ]
