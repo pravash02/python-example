@@ -3,6 +3,7 @@ FROM python:3.8-slim-buster
 WORKDIR /app
 
 COPY . /app
+COPY app.py /app
 
 RUN apt-get update \
  && apt-get install -y curl unzip \
@@ -22,9 +23,10 @@ RUN pip3 install asgiref==3.3.1 && \
     pip3 install sqlparse==0.4.1 && \
     pip3 install Werkzeug==1.0.1
 
-# COPY . .
-
 EXPOSE 5000
 
-ENTRYPOINT [ "python3" ] 
+CMD ["pwd"]
+CMD ["ls"]
+
+ENTRYPOINT [ "python3" ]
 CMD [ "src/app.py" ]
