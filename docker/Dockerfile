@@ -27,4 +27,4 @@ RUN pip3 install asgiref==3.3.1 && \
 EXPOSE 5000
 
 ENTRYPOINT [ "python3" ] 
-CMD [ "app.py" ]
+CMD [ "src/app.py" ]
