@@ -24,6 +24,8 @@ RUN pip3 install asgiref==3.3.1 && \
 
 COPY . .
 
+ENV FLASK_APP app.py
+
 ENTRYPOINT [ "python3" ] 
 
 CMD [ "app.py" ]
