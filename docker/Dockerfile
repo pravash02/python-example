@@ -27,5 +27,5 @@ EXPOSE 5000
 CMD ["pwd"]
 CMD ["ls"]
 
-# ENTRYPOINT [ "python3" ]
-# CMD [ "app/app.py" ]
+ENTRYPOINT [ "python3" ]
+CMD [ "docker/app.py" ]
