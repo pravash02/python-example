@@ -24,6 +24,6 @@ RUN pip3 install asgiref==3.3.1 && \
 
 COPY . .
 
-ENV FLASK_APP /app/app.py
+ENV FLASK_APP app
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+CMD flask run
