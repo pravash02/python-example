@@ -39,7 +39,7 @@ jobs:
             file: docker/Dockerfile
             builder: ${{ steps.buildx.outputs.name }}
             push: true
-            tags: pravash05/python-example:latest8
+            tags: pravash05/python-example:latest9
             cache-from: type=local,src=/tmp/.buildx-cache
             cache-to: type=local,dest=/tmp/.buildx-cache
         - name: Image digest
