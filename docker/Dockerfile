@@ -3,7 +3,7 @@ FROM python:3.8-slim-buster
 WORKDIR /app
 
 COPY . /app
-COPY app.py /app
+COPY app.py .
 
 RUN apt-get update \
  && apt-get install -y curl unzip \
