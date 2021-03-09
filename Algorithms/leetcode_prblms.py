@@ -39,7 +39,7 @@ class AddTwoNumbers:
         sum1 = "".join(str(i) for i in l1)
         sum2 = "".join(str(i) for i in l2)
         res = int(sum1) + int(sum2)
-        print res
+        print(res)
         self.get_linked_list(list(str(res)))
         return self.display()
 
@@ -63,7 +63,7 @@ def lengthOfLongestSubstring(s):
         else:
             count = max(count, i-start+1)
         d[s[i]] = i
-    print count
+    print(count)
 
 
 def sum_of_consecutive_subarray(s, k):

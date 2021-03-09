@@ -23,7 +23,7 @@ def print_dfs_graph_recursion(edge, val):
 
 def dfs_util_recursion(v, visited_edges, edge):
     visited_edges[v] = True
-    print v
+    print(v)
 
     for i in edge[v]:
         if not visited_edges[i]:
@@ -38,7 +38,7 @@ def print_dfs_graph_iterative(nodes, start):
         pop = stack.pop()
 
         if not visited[pop]:
-            print pop
+            print(pop)
             visited[pop] = True
 
         for i in nodes[pop]:

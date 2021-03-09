@@ -174,7 +174,7 @@ class BinaryTree(Stack):
                     queue.enqueue(pop.right)
                 node_count -= 1
             level += 1
-        print "level_no", level_no
+        print("level_no", level_no)
 
     @staticmethod
     def reverse_level_order_print(start):
@@ -305,7 +305,7 @@ class BinaryTree(Stack):
     @staticmethod
     def path_vector(path, j):
         for i in range(j, len(path)):
-            print path[j]
+            print(path[j])
 
     def expression_tree(self, root):
         if root is None:
@@ -409,7 +409,7 @@ class BinaryOperations:
         if root.left:
             self.minimum_element(root.left)
         else:
-            print root.value
+            print(root.value)
 
     @staticmethod
     def right_view_binary(root):
@@ -423,7 +423,7 @@ class BinaryOperations:
 
             if pop.right:
                 q.enqueue(pop.right)
-        print lst
+        print(lst)
 
     def left_most_node(self, root, lst):
         if root is None:

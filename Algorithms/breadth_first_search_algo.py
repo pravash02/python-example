@@ -28,7 +28,7 @@ def bfs_util_recursion(queue, visited_edges, edge):
     while len(queue) != 0:
         top = queue[-1]
         visited_edges[top] = True
-        print top
+        print(top)
 
         pop = queue.pop()
 
@@ -47,7 +47,7 @@ def print_bfs_graph_iterative(edge, val):
 
     while queue:
         pop = queue.pop()
-        print pop
+        print(pop)
 
         for i in edge[pop]:
             if not visited[i]:
