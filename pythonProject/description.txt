@@ -1,0 +1,1 @@
+This project view is the playground for python practices

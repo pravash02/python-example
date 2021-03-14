@@ -1,0 +1,2 @@
+This 'MySite' project is the example of the blog using
+Django web framework

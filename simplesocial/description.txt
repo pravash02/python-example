@@ -1,0 +1,2 @@
+This 'SimpleSocial' project is the example of the social site using
+Django web framework
