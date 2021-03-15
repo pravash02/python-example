@@ -1,52 +1,23 @@
-import sys
-import os
 import json
-import argparse
 # from google.cloud import bigquery
 from python_db_connector.dbconn import mysql_conn
 from python_db_connector.get_datatype_mapping import get_datatype_mapping
 from python_db_connector.get_table_names import get_table_names
 
-parser = argparse.ArgumentParser(add_help=False)
 
-parser.add_argument('--host', dest='db_host', action='store', required=False, help="Database server IP/Endpoint")
-parser.add_argument('--user', dest='db_user', action='store', required=False, help="Database username")
-parser.add_argument('--password', dest='db_password', action='store', required=False, help="Database Password")
-parser.add_argument('--port', dest='db_port', action='store', required=False, help="Database Port")
-parser.add_argument('--database', dest='db_name', action='store', required=False, help="Database name")
-parser.add_argument('--source', dest='source', action='store', required=True, type=str.lower,
-                    choices=['mysql', 'teradata'], help="Source platform (eg:redshift, sqlserver)")
-parser.add_argument('--mapping', dest='mapping', action='store', required=False,
-                    help="Path for your custom Datatype mapping file")
-# parser.add_argument('--bq_project', dest='bq_project', action='store', required=True,help="Bigquery project name")
-# parser.add_argument('--bq_location', dest='bq_location', action='store', help="Bigquery dataset location")
-# parser.add_argument('--bq_dataset', dest='bq_dataset', action='store', required=True, help="Bigquery dataset name")
-parser.add_argument('--bq_drop_tbl', dest='drop_table', action='store', required=False, default='no', type = str.lower,
-                    choices=['yes', 'no'], help="Drop tables on Bigquery before migrating the schema")
-parser.add_argument('--bq_create_tbl', dest='create_table', action='store', required=False, default='no', type = str.lower,
-                    choices=['yes', 'no'], help="Create the tables on BigQuery")
-
-
-args = parser.parse_args()
-# client = bigquery.Client()
-print(str(args.db_host))
-print(str(args.source))
-print(str(args.mapping))
-
-
-if str(args.source) == 'mysql':
-    with open('connection_details/' + args.source + '.json') as f:
+def convert_mysql_to_bq(source, mapping):
+    print('Inside MySQL Conversion Function')
+    with open('connection_details/' + source + '.json') as f:
         data = json.load(f)
 
-# Get the DB connection
-conn = mysql_conn.mysql_conn(**data)
+    # Get the DB connection
+    conn = mysql_conn.mysql_conn(**data)
 
-# Buffered cursor helps the connector to fetch ALL rows behind the scenes and
-# we just take one from the connector so the mysql db won't complain
-db_cursor = conn.cursor(buffered=True)
+    # Buffered cursor helps the connector to fetch ALL rows behind the scenes and
+    # we just take one from the connector so the mysql db won't complain
+    db_cursor = conn.cursor(buffered=True)
 
-if __name__ == '__main__':
-    data_mapping = get_datatype_mapping(args.mapping, args.source)
+    data_mapping = get_datatype_mapping(mapping, source)
     finalized_schema_table_names = get_table_names(db_cursor)
 
     # ['profiles', 'users']
@@ -105,17 +76,17 @@ if __name__ == '__main__':
 
             # table = bigquery.Table(table_id, schema=schema)
 
-        if apply.lower() == 'yes':
-            if drop_flag.lower() == 'yes':
+            if apply.lower() == 'yes':
+                if drop_flag.lower() == 'yes':
+                    pass
+                    # client.query(bq_drop_tbl)
+                # table = client.create_table(table)
+            else:
                 pass
-                # client.query(bq_drop_tbl)
-            # table = client.create_table(table)
-        else:
-            pass
-            # bq_create_body = '''CREATE TABLE `{}.{}.{}` \n(\n{}\n); '''.format(bq_project, bq_dataset, t_name,
-            #                                                                   columns_string)
+                # bq_create_body = '''CREATE TABLE `{}.{}.{}` \n(\n{}\n); '''.format(bq_project, bq_dataset, t_name,
+                #                                                                   columns_string)
 
-            # if drop_flag.lower() == 'yes':
-            #     sql_query = bq_info + '\n' + bq_drop_tbl + '\n' + bq_create_body
-            # else:
-            #     sql_query = bq_info + '\n' + bq_create_body
+                # if drop_flag.lower() == 'yes':
+                #     sql_query = bq_info + '\n' + bq_drop_tbl + '\n' + bq_create_body
+                # else:
+                #     sql_query = bq_info + '\n' + bq_create_body
