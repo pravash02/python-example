@@ -1,0 +1,5 @@
+{
+	"int": "INTEGER",
+	"varchar": "STRING",
+	"date": "DATE"
+}
