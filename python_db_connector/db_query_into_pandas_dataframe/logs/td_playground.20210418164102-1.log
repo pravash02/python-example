@@ -1,0 +1,116 @@
+2021-04-18 16:41:02,384 - teradata.udaexec - INFO - Initializing UdaExec...
+2021-04-18 16:41:02,384 - teradata.udaexec - INFO - Reading config files: ['/etc/udaexec.ini: Not Found', '/Users/pravashpanigrahi/udaexec.ini: Not Found', '/Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/udaexec.ini: Not Found']
+2021-04-18 16:41:02,384 - teradata.udaexec - INFO - No previous run number found as /Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/.runNumber does not exist. Initializing run number to 1
+2021-04-18 16:41:02,384 - teradata.udaexec - INFO - Cleaning up log files older than 90 days.
+2021-04-18 16:41:02,384 - teradata.udaexec - INFO - Removed 0 log files.
+2021-04-18 16:41:02,745 - teradata.udaexec - INFO - Checkpoint file not found: /Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/td_playground.checkpoint
+2021-04-18 16:41:02,746 - teradata.udaexec - INFO - No previous checkpoint found, executing from beginning...
+2021-04-18 16:41:02,746 - teradata.udaexec - INFO - Execution Details:
+/********************************************************************************
+ * Application Name: td_playground
+ *          Version: 1.0
+ *       Run Number: 20210418164102-1
+ *             Host: Pravashs-MacBook-Air.local
+ *         Platform: macOS-10.16-x86_64-i386-64bit
+ *          OS User: pravashpanigrahi
+ *   Python Version: 3.9.0
+ *  Python Compiler: Clang 6.0 (clang-600.0.57)
+ *     Python Build: ('v3.9.0:9cf6752276', 'Oct  5 2020 11:29:23')
+ *  UdaExec Version: 15.10.0.21
+ *     Program Name: /Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/read_sql_pd_util.py
+ *      Working Dir: /Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe
+ *      Git Version: git version 2.24.3 (Apple Git-128)
+ *     Git Revision: d70ff71
+ *        Git Dirty: True [ M python_db_connector/db_query_into_pandas_dataframe/read_sql_pd_util.py,?? python_db_connector/db_query_into_pandas_dataframe/.runNumber,?? python_db_connector/db_query_into_pandas_dataframe/logs/]
+ *          Log Dir: /Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/logs
+ *         Log File: /Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/logs/td_playground.20210418164102-1.log
+ *     Config Files: ['/etc/udaexec.ini: Not Found', '/Users/pravashpanigrahi/udaexec.ini: Not Found', '/Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/udaexec.ini: Not Found']
+ *      Query Bands: ApplicationName=td_playground;Version=1.0;JobID=20210418164102-1;ClientUser=pravashpanigrahi;Production=False;udaAppLogFile=/Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/logs/td_playground.20210418164102-1.log;gitRevision=d70ff71;gitDirty=True;UtilityName=PyTd;UtilityVersion=15.10.0.21
+********************************************************************************/
+2021-04-18 16:41:06,120 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable onattempt 1 of 3. Reason: timed out
+2021-04-18 16:41:09,126 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable onattempt 2 of 3. Reason: timed out
+2021-04-18 16:41:09,128 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable onattempt 3 of 3. Reason: [Errno 64] Host is down
+2021-04-18 16:41:09,128 - google.auth._default - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2021-04-18 16:42:09,185 - teradata.udaexec - ERROR - Uncaught exception
+Traceback (most recent call last):
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/socket.py", line 953, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/urllib3/connectionpool.py", line 382, in _make_request
+    self._validate_conn(conn)
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1010, in _validate_conn
+    conn.connect()
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fafb5146f10>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fafb5146f10>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/google/auth/transport/requests.py", line 183, in __call__
+    response = self.session.request(
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fafb5146f10>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/read_sql_pd_util.py", line 85, in <module>
+    list_tables = get_table_list(con_uri)
+  File "/Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/read_sql_pd_util.py", line 74, in load_to_gbq
+    print(df)
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/pandas_gbq/gbq.py", line 1021, in to_gbq
+    connector = GbqConnector(
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/pandas_gbq/gbq.py", line 297, in __init__
+    self.credentials, default_project = auth.get_credentials(
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/pandas_gbq/auth.py", line 42, in get_credentials
+    credentials, default_project_id = pydata_google_auth.default(
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/pydata_google_auth/auth.py", line 104, in default
+    credentials = get_user_credentials(
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/pydata_google_auth/auth.py", line 245, in get_user_credentials
+    credentials = credentials_cache.load()
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/pydata_google_auth/cache.py", line 190, in load
+    return _load_user_credentials_from_file(self._path)
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/pydata_google_auth/cache.py", line 88, in _load_user_credentials_from_file
+    return _load_user_credentials_from_info(credentials_json)
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/pydata_google_auth/cache.py", line 53, in _load_user_credentials_from_info
+    credentials.refresh(request)
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/google/oauth2/credentials.py", line 228, in refresh
+    ) = reauth.refresh_grant(
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/google/oauth2/reauth.py", line 318, in refresh_grant
+    response_status_ok, response_data = _client._token_endpoint_request_no_throw(
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/google/oauth2/_client.py", line 115, in _token_endpoint_request_no_throw
+    response = request(method="POST", url=token_uri, headers=headers, body=body)
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/google/auth/transport/requests.py", line 189, in __call__
+    six.raise_from(new_exc, caught_exc)
+  File "<string>", line 3, in raise_from
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fafb5146f10>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+2021-04-18 16:42:09,232 - teradata.udaexec - INFO - UdaExec exiting.

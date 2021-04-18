@@ -1,0 +1,44 @@
+2021-04-18 19:05:52,999 - teradata.udaexec - INFO - Initializing UdaExec...
+2021-04-18 19:05:53,000 - teradata.udaexec - INFO - Reading config files: ['/etc/udaexec.ini: Not Found', '/Users/pravashpanigrahi/udaexec.ini: Not Found', '/Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/udaexec.ini: Not Found']
+2021-04-18 19:05:53,000 - teradata.udaexec - INFO - Found run number file: "/Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/.runNumber"
+2021-04-18 19:05:53,000 - teradata.udaexec - INFO - Cleaning up log files older than 90 days.
+2021-04-18 19:05:53,000 - teradata.udaexec - INFO - Removed 0 log files.
+2021-04-18 19:05:53,332 - teradata.udaexec - INFO - Checkpoint file not found: /Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/td_playground.checkpoint
+2021-04-18 19:05:53,333 - teradata.udaexec - INFO - No previous checkpoint found, executing from beginning...
+2021-04-18 19:05:53,333 - teradata.udaexec - INFO - Execution Details:
+/********************************************************************************
+ * Application Name: td_playground
+ *          Version: 1.0
+ *       Run Number: 20210418190552-16
+ *             Host: Pravashs-MacBook-Air.local
+ *         Platform: macOS-10.16-x86_64-i386-64bit
+ *          OS User: pravashpanigrahi
+ *   Python Version: 3.9.0
+ *  Python Compiler: Clang 6.0 (clang-600.0.57)
+ *     Python Build: ('v3.9.0:9cf6752276', 'Oct  5 2020 11:29:23')
+ *  UdaExec Version: 15.10.0.21
+ *     Program Name: /Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/read_sql_pd_util.py
+ *      Working Dir: /Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe
+ *      Git Version: git version 2.24.3 (Apple Git-128)
+ *     Git Revision: d70ff71
+ *        Git Dirty: True [ M python_db_connector/db_query_into_pandas_dataframe/read_sql_pd_util.py,?? python_db_connector/db_query_into_pandas_dataframe/.runNumber,?? python_db_connector/db_query_into_pandas_dataframe/logs/]
+ *          Log Dir: /Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/logs
+ *         Log File: /Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/logs/td_playground.20210418190552-16.log
+ *     Config Files: ['/etc/udaexec.ini: Not Found', '/Users/pravashpanigrahi/udaexec.ini: Not Found', '/Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/udaexec.ini: Not Found']
+ *      Query Bands: ApplicationName=td_playground;Version=1.0;JobID=20210418190552-16;ClientUser=pravashpanigrahi;Production=False;udaAppLogFile=/Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/logs/td_playground.20210418190552-16.log;gitRevision=d70ff71;gitDirty=True;UtilityName=PyTd;UtilityVersion=15.10.0.21
+********************************************************************************/
+2021-04-18 19:05:53,352 - teradata.udaexec - ERROR - Uncaught exception
+Traceback (most recent call last):
+  File "/Users/pravashpanigrahi/PycharmProjects/python-example/python_db_connector/db_query_into_pandas_dataframe/read_sql_pd_util.py", line 50, in <module>
+    td_engine = create_engine(connection_string,
+  File "<string>", line 2, in create_engine
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/sqlalchemy/util/deprecations.py", line 298, in warned
+    return fn(*args, **kwargs)
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/sqlalchemy/engine/create.py", line 518, in create_engine
+    u = _url.make_url(url)
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/sqlalchemy/engine/url.py", line 711, in make_url
+    return _parse_rfc1738_args(name_or_url)
+  File "/Users/pravashpanigrahi/PycharmProjects/.python/envs/lib/python3.9/site-packages/sqlalchemy/engine/url.py", line 777, in _parse_rfc1738_args
+    raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse rfc1738 URL from string 'jdbc:teradata://172.16.114.2/database=console, USER=dbc,PASSWORD=dbc,tmode=TERA,charset=UTF8'
+2021-04-18 19:05:53,358 - teradata.udaexec - INFO - UdaExec exiting.

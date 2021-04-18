@@ -1,12 +1,9 @@
 import json
 import pandas as pd
-import teradata
 import pandas_gbq as pd_gbq
 from google.cloud import bigquery
-from google_auth_oauthlib import flow
 from google.oauth2 import service_account
 from sqlalchemy import create_engine
-
 
 # Service account file for GCP connection
 credentials = service_account.Credentials.from_service_account_file('../connection_details/prav-proj-5d21e9018f12.json')
@@ -16,7 +13,6 @@ credentials = service_account.Credentials.from_service_account_file('../connecti
 # BigQuery Variables
 PROJECT_ID = 'prav-proj'
 DATASET_ID = 'data_load_common'
-
 
 # MySQL Variables
 with open('../connection_details/' + 'mysql.json') as f:
@@ -42,19 +38,12 @@ def create_conn(database_name):
 
     return conn_uri, sql_engine
 
-# Teradata Connection
-# udaExec = teradata.UdaExec(appName="DataTransfer", version="1.0",
-#                            logConsole=False)
-# session = udaExec.connect(method="odbc", system="",
-#                           username="", password="")
-# session.execute("SELECT * FROM table_nm")
 
-
-def get_table_list(conn_uri):
+def get_table_list(conn_uri, db_name):
     list_tables_query = 'SELECT table_name ' \
-                  'FROM information_schema.tables ' \
-                  'WHERE TABLE_TYPE = "BASE TABLE" ' \
-                  'AND TABLE_SCHEMA = "user_database";'
+                        'FROM information_schema.tables ' \
+                        'WHERE TABLE_TYPE = "BASE TABLE" ' \
+                        'AND TABLE_SCHEMA = "{}";'.format(db_name)
     list_tables_df = pd.read_sql(list_tables_query, conn_uri)
 
     list_table = list_tables_df['TABLE_NAME'].to_list()
@@ -81,5 +70,5 @@ def load_to_gbq(list_table, conn_uri):
 if __name__ == '__main__':
     db_list = ['user_database']
     con_uri, engine = create_conn(db_list[0])
-    list_tables = get_table_list(con_uri)
+    list_tables = get_table_list(con_uri, db_list[0])
     load_to_gbq(list_tables, con_uri)
